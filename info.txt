@@ -1,0 +1,19 @@
+; -   При додаванні нової сторінки створюємо новий html файл, додаємо посилання в nav.html, 
+;   створюємо новий js і підключаємо його в новому html, в файлі webpack.config.js в розділі entry підключити новий js
+
+
+
+
+; -- зображення
+<!-- <img src="./img/jpg.jpg" alt="img"> -->
+
+; --- шрифт
+// @font-face {
+//     font-family: 'Varta';
+//     src: 
+//         url('./../fonts/Varta-SemiBold.woff2') format('woff2'),
+//         url('./../fonts/Varta-SemiBold.woff') format('woff'),
+//         url('./../fonts/Varta-SemiBold.eot') format('embedded-opentype'),
+//         url('./../fonts/Varta-SemiBold.ttf') format('truetype');
+//         font-weight: 600px;
+// }
