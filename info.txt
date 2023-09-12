@@ -2,7 +2,7 @@
 ;   створюємо новий js і підключаємо його в новому html, в файлі webpack.config.js в розділі entry підключити новий js
 
 
-
+@@include('blocks/header.html')
 
 ; -- зображення
 <!-- <img src="./img/jpg.jpg" alt="img"> -->

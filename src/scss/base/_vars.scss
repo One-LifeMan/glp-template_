@@ -21,7 +21,7 @@ $main-font-family: "Arial";
 // $second-font-family: "Arial";
 // $third-font-family: "Arial";
 
-$main-font-size-rem: 1rem;
+$main-font-size-rem: calc(6px + 10 * (100vw / 1920));
 $main-font-size: 1.25rem;
 $h1-font-size: 3rem;
 $h2-font-size: 2.5rem;

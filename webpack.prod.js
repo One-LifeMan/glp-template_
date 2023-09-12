@@ -1,5 +1,5 @@
 const config = {
-    mode: 'none',
+    mode: 'production',
     entry: {
         script: './src/js/script.js',
         "index-script": './src/js/index-script.js',

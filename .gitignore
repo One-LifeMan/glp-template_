@@ -1,2 +1,4 @@
-/node_modules
-info
+build/
+node_modules/
+info.txt
+package-lock.json
