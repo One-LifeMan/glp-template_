@@ -20,28 +20,30 @@
 //         font-weight: 600px;
 // }
 
-
+html {
+    // @include adaptiv-font(40, 24);
+}
 
 h1 {
-    font-size: $h1-font-size;
+    // @include adaptiv-font(40, 24);
 }
 
 h2 {
-    font-size: $h2-font-size;
+    // @include adaptiv-font(40, 24);
 }
 
 h3 {
-    font-size: $h3-font-size;
+    // @include adaptiv-font(40, 24);
 }
 
 h4 {
-    font-size: $h4-font-size;
+    // @include adaptiv-font(40, 24);
 }
 
 h5 {
-    font-size: $h5-font-size;
+    // @include adaptiv-font(40, 24);
 }
 
 h6 {
-    font-size: $h6-font-size;
+    // @include adaptiv-font(40, 24);
 }
