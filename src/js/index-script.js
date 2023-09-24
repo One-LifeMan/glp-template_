@@ -1,7 +1,8 @@
-'use strict'
+"use strict"
 
 //модулі підключати якщо потрібно
 // import "./modules/swiper";
+
 
 import {
     

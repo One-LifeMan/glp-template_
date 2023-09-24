@@ -1,5 +1,7 @@
 'use strict'
 
+import "./modules/dark-mode";
+
 import {
     
 } from "./constants/constants";

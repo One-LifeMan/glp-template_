@@ -1,8 +1,18 @@
 .menu {
     &__list {
+        display: flex;
+        flex-wrap: wrap;
+        // align-items: center;
+        margin: 0 10px;
     }
     &__item {
     }
     &__link {
+        padding: 10px;
+        display: inline-block;
+        color: $main-text-color;
+        &:hover {
+            background-color: rgba($main-text-color, $alpha: 0.5);
+        }
     }
 }

@@ -1,34 +1,39 @@
-const gulp = require('gulp');
+const gulp                  = require('gulp');
 
 //HTML
-const fileInclude = require('gulp-file-include');
-const htmlclean = require('gulp-htmlclean');
-const webpHTML = require('gulp-webp-html');
+const fileInclude           = require('gulp-file-include');
+const htmlclean             = require('gulp-htmlclean');
+const webpHTML              = require('gulp-webp-html');
 
 //SASS
-const sass = require('gulp-sass')(require('sass'));
-const sassGlob = require('gulp-sass-glob');
-const autoprefixer = require('gulp-autoprefixer');
-const csso = require('gulp-csso');
-const webpCss = require('gulp-webp-css-fixed');
-const postcss = require('gulp-postcss');
-const cssDeclarationSorter = require('css-declaration-sorter');
+const sass                  = require('gulp-sass')(require('sass'));
+const sassGlob              = require('gulp-sass-glob');
+const autoprefixer          = require('gulp-autoprefixer');
+const csso                  = require('gulp-csso');
+const webpCss               = require('gulp-webp-css-fixed');
+const postcss               = require('gulp-postcss');
+const cssDeclarationSorter  = require('css-declaration-sorter');
 
-const server = require('gulp-server-livereload');
-const clean = require('gulp-clean');
-const fs = require('fs');
-const sourceMaps = require('gulp-sourcemaps');
-const groupMedia = require('gulp-group-css-media-queries');
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
-const webpack = require('webpack-stream');
-const babel = require('gulp-babel');
+const server                = require('gulp-server-livereload');
+const clean                 = require('gulp-clean');
+const fs                    = require('fs');
+const sourceMaps            = require('gulp-sourcemaps');
+const groupMedia            = require('gulp-group-css-media-queries');
+const plumber               = require('gulp-plumber');
+const notify                = require('gulp-notify');
+const webpack               = require('webpack-stream');
+const babel                 = require('gulp-babel');
 
 //IMG
-const imagemin = require('gulp-imagemin');
-const webp = require('gulp-webp');
+const imagemin              = require('gulp-imagemin');
+const webp                  = require('gulp-webp');
+const svgSprite             = require('gulp-svg-sprite');
 
-const changed = require('gulp-changed');
+//FONTS
+const ttf2woff = require('gulp-ttf2woff');
+const ttf2woff2 = require('gulp-ttf2woff2');
+
+const changed               = require('gulp-changed');
 
 const fileIncludeSettings = {
     prefix: '@@',
@@ -77,20 +82,38 @@ gulp.task('sass:docs', function () {
 
 gulp.task('images:docs', function () {
     return gulp
-        .src('./src/img/**/*')
+        .src(['./src/img/**/*', '!./src/img/icon/sprite/*.svg', '!./src/img/icon/*.svg'])
         .pipe(changed('./docs/img/'))
         .pipe(webp())
         .pipe(gulp.dest('./docs/img/'))
 
-        .pipe(gulp.src('./src/img/**/*'))
+        .pipe(gulp.src(['./src/img/**/*', '!./src/img/icon/sprite/*.svg', '!./src/img/icon/*.svg']))
         .pipe(changed('./docs/img/'))
         .pipe(imagemin({ verbose: true}))
-        .pipe(gulp.dest('./docs/img/'));
+        .pipe(gulp.dest('./docs/img/'))
+
+        .pipe(gulp.src('./src/img/icon/sprite/*.svg'))
+        .pipe(svgSprite({
+            mode: {
+                stack: {
+                    sprite: "../sprite.svg" 
+                }
+            },
+        }))
+        .pipe(gulp.dest('./docs/img/icon/'));
 });
 
 gulp.task('fonts:docs', function () {
     return gulp
-        .src('./src/fonts/**/*')
+        .src(['./src/fonts/**/*.ttf'])
+        .pipe(ttf2woff())
+        .pipe(gulp.dest('./docs/fonts/'))
+
+        .pipe(gulp.src(['./src/fonts/**/*.ttf']))
+        .pipe(ttf2woff2())
+        .pipe(gulp.dest('./docs/fonts/'))
+
+        .pipe(gulp.src('./src/fonts/**/*'))
         .pipe(changed('./docs/fonts/'))
         .pipe(gulp.dest('./docs/fonts/'));
 });

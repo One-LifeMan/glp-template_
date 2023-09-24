@@ -1,12 +1,10 @@
+@import "./base/dont_stick";
 @import "./base/reset";
 @import "./base/vars";
 @import "./base/fonts";
 @import "./base/global";
 @import "./base/utils";
 @import "./media/media";
-
 // BASE
-
 @import "./blocks/*.scss";
-
 // BLOCKS

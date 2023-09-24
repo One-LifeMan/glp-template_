@@ -1,28 +1,35 @@
+
+//==================================================
+//============ CONTAINER ===========================
+//==================================================
 $maxWidth: 1220;
 $container: $maxWidth + px;
-// -------------------------------------- size start
+//==================================================
+////============ MEDIA =============================
+//==================================================
 $laptop-size: 1199px;
 $tablet-size: 959px;
 $mobile-size: 599px;
-// -------------------------------------- size end
-// -------------------------------------- color start
-	$main-bg: #ffffff;
-    $second-bg: #252526;
+//==================================================
+////============ COLOR =============================
+//==================================================
+$main-bg: #ffffff;
+$second-bg: #252526;
 
-    $main-text-color: #252526;
-    $second-text-color: #ffffff;
-	
-// .dark {
-//     $main-bg: #252526;
-//     $main-text-color: #ffffff;
-// }
+$main-text-color: #252526;
+$second-text-color: #ffffff;
 
-// -------------------------------------- color end
-// -------------------------------------- font start
+$selector-bg: rgba(red, 0.5);
+$selector-color: rgba(white, 1);
+//==================================================
+////============ FONT ==============================
+//==================================================
 $main-font-family: "Arial";
 // $second-font-family: "Arial";
 // $third-font-family: "Arial";
 
+$main-font-weight: 400;
+$main-line-height: 1;
 
 @mixin adaptiv-font($pcSize, $mobSize) {
     $addSize: $pcSize - $mobSize; // (40 - 24)
@@ -33,6 +40,6 @@ $main-font-family: "Arial";
     @media (min-width: 767px) {
         font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
     }
-}
+};
 
-// -------------------------------------- font end
+

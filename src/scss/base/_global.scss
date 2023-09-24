@@ -5,7 +5,8 @@ html {
 body {
     font-family: $main-font-family;
     font-style: normal;
-    font-weight: 400;
+    font-weight: $main-font-weight;
+    line-height: $main-line-height;
     color: $main-text-color;
     background-color: $main-bg;
 }
@@ -28,5 +29,6 @@ img {
 }
 
 *::selection {
-    background-color: rgba($second-bg, 0.5);
+    color: $selector-color;
+    background-color: $selector-bg;
 }

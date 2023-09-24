@@ -1,17 +1,21 @@
-const gulp = require('gulp');
-const fileInclude = require('gulp-file-include');
-const sass = require('gulp-sass')(require('sass'));
-const sassGlob = require('gulp-sass-glob');
-const server = require('gulp-server-livereload');
-const clean = require('gulp-clean');
-const fs = require('fs');
-const sourceMaps = require('gulp-sourcemaps');
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
-const webpack = require('webpack-stream');
-const babel = require('gulp-babel');
-const imagemin = require('gulp-imagemin');
-const changed = require('gulp-changed');
+const gulp          = require('gulp');
+const fileInclude   = require('gulp-file-include');
+const sass          = require('gulp-sass')(require('sass'));
+const sassGlob      = require('gulp-sass-glob');
+const server        = require('gulp-server-livereload');
+const clean         = require('gulp-clean');
+const fs            = require('fs');
+const sourceMaps    = require('gulp-sourcemaps');
+const plumber       = require('gulp-plumber');
+const notify        = require('gulp-notify');
+const webpack       = require('webpack-stream');
+const babel         = require('gulp-babel');
+const svgSprite     = require('gulp-svg-sprite');
+const imagemin      = require('gulp-imagemin');
+const changed       = require('gulp-changed');
+
+const ttf2woff = require('gulp-ttf2woff');
+const ttf2woff2 = require('gulp-ttf2woff2');
 
 
 const fileIncludeSettings = {
@@ -52,7 +56,17 @@ gulp.task('sass:dev', function () {
 
 gulp.task('images:dev', function () {
     return gulp
-        .src('./src/img/**/*')
+        .src('./src/img/icon/sprite/*.svg')
+        .pipe(svgSprite({
+            mode: {
+                stack: {
+                    sprite: "../sprite.svg"  //sprite file name
+                }
+            },
+        }))
+        .pipe(gulp.dest('./src/img/icon/'))
+        
+        .pipe(gulp.src(['./src/img/**/*', '!./src/img/icon/sprite/*.svg']))
         .pipe(changed('./build/img/'))
         // .pipe(imagemin({ verbose: true}))
         .pipe(gulp.dest('./build/img/'));
@@ -60,7 +74,15 @@ gulp.task('images:dev', function () {
 
 gulp.task('fonts:dev', function () {
     return gulp
-        .src('./src/fonts/**/*')
+        .src(['./src/fonts/**/*.ttf'])
+        .pipe(ttf2woff())
+        .pipe(gulp.dest('./build/fonts/'))
+
+        .pipe(gulp.src(['./src/fonts/**/*.ttf']))
+        .pipe(ttf2woff2())
+        .pipe(gulp.dest('./build/fonts/'))
+
+        .pipe(gulp.src('./src/fonts/**/*'))
         .pipe(changed('./build/fonts/'))
         .pipe(gulp.dest('./build/fonts/'));
 });

@@ -1,19 +1,24 @@
-; -   При додаванні нової сторінки створюємо новий html файл, додаємо посилання в nav.html, 
-;   створюємо новий js і підключаємо його в новому html, в файлі webpack.config.js в розділі entry підключити новий js
 
+Щоб створити нову сторінку потрібно ввести команду (замість "about" свою назву):
+    node create-files.js about
 
-@@include('blocks/header.html')
+    - створяться такі файли:
+        - about.html            в src/html/
+        - about-script.js       в scr/js/
+        - about-styles.scss     в src/scss/
+        - about-media.scss      в src/scss/media/
 
-; -- зображення
-<!-- <img src="./img/jpg.jpg" alt="img"> -->
+    !ВАЖЛИВО!
+    потрібно прописати шлях до нового .js файлу в entry:
+        - webpack.config.js
+        - webpack.prod.js
 
-; --- шрифт
-// @font-face {
-//     font-family: 'Varta';
-//     src: 
-//         url('./../fonts/Varta-SemiBold.woff2') format('woff2'),
-//         url('./../fonts/Varta-SemiBold.woff') format('woff'),
-//         url('./../fonts/Varta-SemiBold.eot') format('embedded-opentype'),
-//         url('./../fonts/Varta-SemiBold.ttf') format('truetype');
-//         font-weight: 600px;
-// }
+---------------------------------------------------------------------------------
+підключення html блоків:
+    @@include('blocks/header.html')
+
+підключення зображень в html
+    - звичайні
+        <img src="./img/jpg.jpg" alt="img">
+    - svg sprite
+        <img src="./img/icon/sprite.svg#car" alt="car">
