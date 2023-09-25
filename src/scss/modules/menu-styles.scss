@@ -6,6 +6,10 @@
         margin: 0 10px;
     }
     &__item {
+        -webkit-user-select: none; /* Safari, Chrome та нові версії Opera */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer та Edge */
+        user-select: none; /* Стандарт */
     }
     &__link {
         padding: 10px;
