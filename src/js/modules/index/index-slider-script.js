@@ -1,1 +1,0 @@
-console.log("index-slider-script");

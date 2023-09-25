@@ -70,7 +70,7 @@ const contentScssMedia = `//==================================================
 //==================================================
 @media screen and (max-width: 320px) {
 }`;
-const contentJs = `console.log("index-slider-script");`;
+const contentJs = `console.log("${moduleName}-slider-script");`;
 
 // створення файлів
 try {
