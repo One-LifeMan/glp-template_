@@ -35,7 +35,7 @@ const plumberNotify = (title) => {
 
 gulp.task('html:dev', function () {
     return gulp
-        .src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
+        .src(['./src/html/**/*.html', '!./src/html/modules/**/*'])
         .pipe(changed('./build/', {hasChanged: changed.compareContents}))
         .pipe(plumber(plumberNotify('HTML')))
         .pipe(fileInclude(fileIncludeSettings))
@@ -66,7 +66,7 @@ gulp.task('images:dev', function () {
         }))
         .pipe(gulp.dest('./src/img/icon/'))
         
-        .pipe(gulp.src(['./src/img/**/*', '!./src/img/icon/sprite/*.svg']))
+        .pipe(gulp.src(['./src/img/**/*', '!./src/img/icon/sprite']))
         .pipe(changed('./build/img/'))
         // .pipe(imagemin({ verbose: true}))
         .pipe(gulp.dest('./build/img/'));

@@ -10,7 +10,6 @@
     &__link {
         padding: 10px;
         display: inline-block;
-        color: $main-text-color;
         &:hover {
             background-color: rgba($main-text-color, $alpha: 0.5);
         }
