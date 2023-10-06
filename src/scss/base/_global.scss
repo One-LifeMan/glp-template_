@@ -4,15 +4,20 @@ html {
 
 body {
     font-family: $main-font-family;
-    font-style: normal;
+    font-size: $main-font-size;
+    font-style: $main-font-style;
     font-weight: $main-font-weight;
     line-height: $main-line-height;
-    color: $main-text-color;
-    background-color: $main-bg;
+    color: var(--main-text-color);
+    background-color: var(--main-bg);
 }
 
 a {
     color: inherit;
+    transition: 0.3s;
+    &:hover {
+        color:var(--a-hover);
+    }
 }
 
 img {
@@ -29,6 +34,6 @@ img {
 }
 
 *::selection {
-    color: $selector-color;
-    background-color: $selector-bg;
+    color: var(--selector-color);
+    background-color: var(--selector-bg);
 }

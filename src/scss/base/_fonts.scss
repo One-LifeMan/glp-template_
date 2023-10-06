@@ -2,7 +2,7 @@
 // 200 - ExtraLight
 // 300 - Light
 // 350 - SemiLight
-// 400 - Normal
+// 400 - Normal / Regular
 // 500 - Medium
 // 600 - SemiBold
 // 700 - Bold
@@ -13,37 +13,17 @@
 
 // @font-face {
 //     font-family: 'Arial';
-//     src: url('./../fonts/Arial.woff2') format('woff2'),
-//         url('./../fonts/Arial.woff') format('woff'),
-//         url('./../fonts/Arial.eot') format('embedded-opentype'),
-//         url('./../fonts/Arial.ttf') format('truetype');
-//         font-weight: 600;
+//     src: url('./../fonts/Arial-Regular.woff2') format('woff2'),
+//         url('./../fonts/Arial-Regular.woff') format('woff'),
+//         url('./../fonts/Arial-Regular.eot') format('embedded-opentype'),
+//         url('./../fonts/Arial-Regular.ttf') format('truetype');
+//         font-weight: 400;
 // }
-
-html {
-    // @include adaptiv-font(40, 24);
-}
-
-h1 {
-    // @include adaptiv-font(40, 24);
-}
-
-h2 {
-    // @include adaptiv-font(40, 24);
-}
-
-h3 {
-    // @include adaptiv-font(40, 24);
-}
-
-h4 {
-    // @include adaptiv-font(40, 24);
-}
-
-h5 {
-    // @include adaptiv-font(40, 24);
-}
-
-h6 {
-    // @include adaptiv-font(40, 24);
-}
+// @font-face {
+//     font-family: 'Arial';
+//     src: url('./../fonts/Arial-Bold.woff2') format('woff2'),
+//         url('./../fonts/Arial-Bold.woff') format('woff'),
+//         url('./../fonts/Arial-Bold.eot') format('embedded-opentype'),
+//         url('./../fonts/Arial-Bold.ttf') format('truetype');
+//         font-weight: 700;
+// }

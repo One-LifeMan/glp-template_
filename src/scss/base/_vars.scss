@@ -4,42 +4,45 @@
 //==================================================
 $maxWidth: 1220;
 $container: $maxWidth + px;
-//==================================================
-////============ MEDIA =============================
-//==================================================
-$laptop-size: 1199px;
-$tablet-size: 959px;
-$mobile-size: 599px;
+
 //==================================================
 ////============ COLOR =============================
 //==================================================
-$main-bg: #ffffff;
-$second-bg: #252526;
 
-$main-text-color: #252526;
-$second-text-color: #ffffff;
+:root {
+    --main-bg: #ffffff;
+    // --second-bg: #252525;
 
-$selector-bg: rgba(red, 0.5);
-$selector-color: rgba(white, 1);
+    --main-text-color: #252525;
+    // --second-text-color: #ffffff;
+
+    --selector-color: #ffffff;
+    --selector-bg: #ff000080;   //50%
+
+    --a-hover: #ffffff;
+    --a-bg-hover: #25252580;   //50%
+}
+.dark-theme {
+    --main-bg: #252525;
+    // --second-bg: #252525;
+
+    --main-text-color: #ffffff;
+    // --second-text-color: #ffffff;
+
+    --selector-color: #ffffff;
+    --selector-bg: #ff000080;   //50%
+
+    --a-hover: #252525;
+    --a-bg-hover: #ffffff80;   //50%
+}
 //==================================================
 ////============ FONT ==============================
 //==================================================
 $main-font-family: "Arial";
 // $second-font-family: "Arial";
 // $third-font-family: "Arial";
-
+$main-font-size: 14px;
+$main-font-style: normal;
 $main-font-weight: 400;
 $main-line-height: 1;
-
-@mixin adaptiv-font($pcSize, $mobSize) {
-    $addSize: $pcSize - $mobSize; // (40 - 24)
-    $addMobSize: $addSize + $addSize * 0.7; // ((40 - 24) + ((40 - 24) * 0.7))
-    @media (max-width: 767px) {
-        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
-    }
-    @media (min-width: 767px) {
-        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
-    }
-};
-
 

@@ -6,16 +6,16 @@
         margin: 0 10px;
     }
     &__item {
-        -webkit-user-select: none; /* Safari, Chrome та нові версії Opera */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer та Edge */
-        user-select: none; /* Стандарт */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
     &__link {
         padding: 10px;
         display: inline-block;
         &:hover {
-            background-color: rgba($main-text-color, $alpha: 0.5);
+            background-color: var(--a-bg-hover);
         }
     }
 }

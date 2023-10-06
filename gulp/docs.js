@@ -122,7 +122,11 @@ gulp.task('files:docs', function () {
     return gulp
         .src('./src/files/**/*')
         .pipe(changed('./docs/files/'))
-        .pipe(gulp.dest('./docs/files/'));
+        .pipe(gulp.dest('./docs/files/'))
+
+        .pipe(gulp.src('./src/lang/**/*'))
+        .pipe(changed('./build/lang/'))
+        .pipe(gulp.dest('./build/lang/'));
 });
 
 gulp.task('js:docs', function () {

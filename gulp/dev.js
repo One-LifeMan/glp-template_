@@ -91,7 +91,11 @@ gulp.task('files:dev', function () {
     return gulp
         .src('./src/files/**/*')
         .pipe(changed('./build/files/'))
-        .pipe(gulp.dest('./build/files/'));
+        .pipe(gulp.dest('./build/files/'))
+
+        .pipe(gulp.src('./src/lang/**/*'))
+        .pipe(changed('./build/lang/'))
+        .pipe(gulp.dest('./build/lang/'));
 });
 
 gulp.task('js:dev', function () {

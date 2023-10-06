@@ -1,3 +1,4 @@
+// node create-page.js FILENAME //
 
 const fs = require('fs');
 const path = require('path');
@@ -29,13 +30,14 @@ const contentHtml = `@@include('./modules/doc.html', {
     "selfStyle": "./css/${filename}-styles.css"
 })
 <body>
+    @@include('./modules/loader.html')
     <div class="wrapper">
 
         @@include('./modules/header.html')
 
         <main class="main">
 
-        <!-- @@include('./modules/${filename}/${filename}-moduleName.html') -->
+
 
         </main>
 
@@ -43,69 +45,51 @@ const contentHtml = `@@include('./modules/doc.html', {
 
     </div>
 
-    <script src="./js/script.bundle.js"></script>
-    <script src="./js/${filename}-script.bundle.js"></script>
+    <script src="./js/${filename}-script.js"></script>
 </body>
 </html>`;
-const contentScss = `//==================================================
-//============ BASE ================================
-//==================================================
-@import "./base/vars";
-//==================================================
-//============ MODULES =============================
-//==================================================
+const contentScss = `
+@import "./styles.scss";
 @import "./modules/${filename}/*.scss";
-//==================================================
-//============ стилі для ${filename}.html ================
-//==================================================
 
 
 
-//==================================================
-//============ MEDIA для ${filename}.html ================
-//============ та його модулів  ====================
-//==================================================
-@import "./media/${filename}-media.scss";
-@import "./media/modules/${filename}/*.scss";`;
-const contentScssMedia = `//==================================================
-//============ 1199px ==============================
-//==================================================
-@media screen and (max-width: $laptop-size) {
+
+// стилі писати ТУТ
+
+
+
+
+
+
+
+@import "./media/${filename}-media.scss";`;
+const contentScssMedia = `@import "./media/media";
+@import "./media/modules/${filename}/*.scss";
+
+@media screen and (max-width: 1199px) {
 }
-//==================================================
-//============ 959px ==============================
-//==================================================
-@media screen and (max-width: $tablet-size) {
+
+@media screen and (max-width: 959px) {
 }
-//==================================================
-//============ 599px ==============================
-//==================================================
-@media screen and (max-width: $mobile-size) {
+
+@media screen and (max-width: 599px) {
 }
-//==================================================
-//============ 320px ==============================
-//==================================================
+
 @media screen and (max-width: 320px) {
 }`;
 const contentJs = `"use strict"
-//==================================================
-//============ модулі для ${filename}.html ===============
-//============ не потрібні - закоментувати =========
-//==================================================
-//import "./modules/${filename}/${filename}-moduleName-script";
-//==================================================
-//============ класи для ${filename}.html ================
-//==================================================
-// import "./classes/";
-//==================================================
-//============ імпорт констант для ${filename}.html ======
-//==================================================
+
+import "./script.js";
+
+//import "./modules/${filename}/${filename}-FILENAME-script.js";
+
+// import "./classes/FILENAME.js";
+
 import {
     
 } from "./constants/constants";
-//==================================================
-//============ скрипт для ${filename}.html ===============
-//==================================================
+
 
 console.log("${filename} script");`;
 

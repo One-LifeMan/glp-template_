@@ -1,10 +1,10 @@
 .logo {
     display: inline-flex;
     // align-self: start;
-    -webkit-user-select: none; /* Safari, Chrome та нові версії Opera */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer та Edge */
-    user-select: none; /* Стандарт */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     &__img {
         max-width: 60px;
         max-height: 60px;

@@ -1,8 +1,7 @@
+// node create-module.js slider index //
 
 const fs    = require('fs');
 const path  = require('path');
-
-// node create-module.js test index
 
 // шляхи де повинні бути створені файли
 const folderHtmlModules        = './src/html/modules';
@@ -11,9 +10,9 @@ const folderScssMediaModules   = './src/scss/media/modules';
 const folderJsModules          = './src/js/modules';
 
 // отримуємо значення з команди
-const fatherModule      = process.argv[3];
+const fatherModule = process.argv[3];
 
-let moduleName        = "";
+let moduleName = "";
 
 function createModuleName(father) {
     if (father) {
@@ -50,27 +49,23 @@ createModulePath(fatherModule);
 // контент кожного файлу
 const contentHtml = ``;
 const contentScss = ``;
-const contentScssMedia = `//==================================================
-//============ 1199px ==============================
-//==================================================
-@media screen and (max-width: $laptop-size) {
+const contentScssMedia = `@media screen and (max-width: 1199px) {
 }
-//==================================================
-//============ 959px ==============================
-//==================================================
-@media screen and (max-width: $tablet-size) {
+
+@media screen and (max-width: 959px) {
 }
-//==================================================
-//============ 599px ==============================
-//==================================================
-@media screen and (max-width: $mobile-size) {
+
+@media screen and (max-width: 599px) {
 }
-//==================================================
-//============ 320px ==============================
-//==================================================
+
 @media screen and (max-width: 320px) {
 }`;
-const contentJs = `console.log("${moduleName}-slider-script");`;
+let contentJs;
+if (fatherModule) {
+    contentJs = `console.log("${fatherModule}-${moduleName}-script");`;
+} else {
+    contentJs = `console.log("${moduleName}-script");`;
+}
 
 // створення файлів
 try {
