@@ -50,6 +50,7 @@ const contentHtml = `@@include('./modules/doc.html', {
 </html>`;
 const contentScss = `
 @import "./styles.scss";
+@import "./modules/*.scss";
 @import "./modules/${filename}/*.scss";
 
 
@@ -63,9 +64,10 @@ const contentScss = `
 
 
 
-@import "./media/${filename}-media.scss";`;
-const contentScssMedia = `@import "./media/media";
+@import "./media/modules/*scss";
 @import "./media/modules/${filename}/*.scss";
+@import "./media/${filename}-media.scss";`;
+const contentScssMedia = `@import "./media.scss";
 
 @media screen and (max-width: 1199px) {
 }

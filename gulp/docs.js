@@ -82,25 +82,25 @@ gulp.task('sass:docs', function () {
 
 gulp.task('images:docs', function () {
     return gulp
-        .src(['./src/img/**/*', '!./src/img/icon/sprite/*.svg', '!./src/img/icon/*.svg'])
+        .src('./src/img/icon/sprite/*.svg')
+        .pipe(svgSprite({
+            mode: {
+                stack: {
+                    sprite: "../sprite.svg"
+                }
+            },
+        }))
+        .pipe(gulp.dest('./src/img/icon/'))
+
+        .pipe(gulp.src(['./src/img/**/*', '!./src/img/icon/sprite/*']))
         .pipe(changed('./docs/img/'))
         .pipe(webp())
         .pipe(gulp.dest('./docs/img/'))
 
-        .pipe(gulp.src(['./src/img/**/*', '!./src/img/icon/sprite/*.svg', '!./src/img/icon/*.svg']))
+        .pipe(gulp.src(['./src/img/**/*', '!./src/img/icon/sprite/*']))
         .pipe(changed('./docs/img/'))
         .pipe(imagemin({ verbose: true}))
         .pipe(gulp.dest('./docs/img/'))
-
-        .pipe(gulp.src('./src/img/icon/sprite/*.svg'))
-        .pipe(svgSprite({
-            mode: {
-                stack: {
-                    sprite: "../sprite.svg" 
-                }
-            },
-        }))
-        .pipe(gulp.dest('./docs/img/icon/'));
 });
 
 gulp.task('fonts:docs', function () {

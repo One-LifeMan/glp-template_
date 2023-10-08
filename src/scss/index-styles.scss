@@ -1,5 +1,6 @@
 
-@import "./styles.scss";
+@import "styles.scss";
+@import "./modules/*.scss";
 @import "./modules/index/*.scss";
 
 
@@ -13,4 +14,6 @@
 
 
 
+@import "./media/modules/*scss";
+@import "./media/modules/index/*.scss";
 @import "./media/index-media.scss";

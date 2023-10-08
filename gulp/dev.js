@@ -60,7 +60,7 @@ gulp.task('images:dev', function () {
         .pipe(svgSprite({
             mode: {
                 stack: {
-                    sprite: "../sprite.svg"  //sprite file name
+                    sprite: "../sprite.svg"
                 }
             },
         }))

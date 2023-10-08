@@ -1,8 +1,9 @@
-@import "./base/dont_stick";
 @import "./base/reset";
+@import "./base/dont_stick";
 @import "./base/vars";
 @import "./base/fonts";
 @import "./base/global";
 @import "./base/utils";
 
-@import "./modules/*.scss";
+@import "./animations/loader-animations.scss";
+

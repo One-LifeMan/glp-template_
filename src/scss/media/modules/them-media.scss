@@ -1,0 +1,26 @@
+@media (prefers-color-scheme: dark) { 
+    :root {
+        --main-bg:          #{$main-text-color};
+
+        --main-text-color:  #{$main-bg};
+
+        --selector-color:   #{$selector-color};
+        --selector-bg:      #{$selector-bg}80;
+
+        --a-hover:          #{$main-text-color};
+        --a-bg-hover:       #{$main-bg}80;
+    }
+}
+@media (prefers-color-scheme: light) { 
+    :root {
+        --main-bg:          #{$main-bg};
+
+        --main-text-color:  #{$main-text-color};
+
+        --selector-color:   #{$selector-color};
+        --selector-bg:      #{$selector-bg}80;
+
+        --a-hover:          #{$main-bg};
+        --a-bg-hover:       #{$main-text-color}80;
+    }
+}

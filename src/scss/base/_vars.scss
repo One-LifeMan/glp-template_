@@ -1,46 +1,43 @@
 
-//==================================================
-//============ CONTAINER ===========================
-//==================================================
-$maxWidth: 1220;
-$container: $maxWidth + px;
+$container: 1220px;
 
-//==================================================
-////============ COLOR =============================
-//==================================================
+
+$main-bg: #ffffff;
+
+$main-text-color: #252525;
+
+$selector-color: #ffffff;
+$selector-bg: #ff000080;   //50%
+
+//$a-hover: #ffffff;
+//$a-bg-hover: #25252580;   //50%
 
 :root {
-    --main-bg: #ffffff;
-    // --second-bg: #252525;
+    --main-bg:          #{$main-bg};
 
-    --main-text-color: #252525;
-    // --second-text-color: #ffffff;
+    --main-text-color:  #{$main-text-color};
 
-    --selector-color: #ffffff;
-    --selector-bg: #ff000080;   //50%
+    --selector-color:   #{$selector-color};
+    --selector-bg:      #{$selector-bg}80;
 
-    --a-hover: #ffffff;
-    --a-bg-hover: #25252580;   //50%
+    --a-hover:          #{$main-bg};
+    --a-bg-hover:       #{$main-text-color}80;
 }
 .dark-theme {
-    --main-bg: #252525;
-    // --second-bg: #252525;
+    --main-bg:          #{$main-text-color};
 
-    --main-text-color: #ffffff;
-    // --second-text-color: #ffffff;
+    --main-text-color:  #{$main-bg};
 
-    --selector-color: #ffffff;
-    --selector-bg: #ff000080;   //50%
+    --selector-color:   #{$selector-color};
+    --selector-bg:      #{$selector-bg}80;
 
-    --a-hover: #252525;
-    --a-bg-hover: #ffffff80;   //50%
+    --a-hover:          #{$main-text-color};
+    --a-bg-hover:       #{$main-bg}80;
 }
-//==================================================
-////============ FONT ==============================
-//==================================================
+
+
 $main-font-family: "Arial";
-// $second-font-family: "Arial";
-// $third-font-family: "Arial";
+
 $main-font-size: 14px;
 $main-font-style: normal;
 $main-font-weight: 400;

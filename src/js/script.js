@@ -1,7 +1,9 @@
 'use strict'
 
 
-// import "./modules/FILENAME.js";
+
+import "./modules/loader-script.js";
+import "./modules/mobile-script.js";
 
 // import "./classes/FILENAME.js";
 
@@ -11,3 +13,4 @@ import {
 
 
 console.log("shared script");
+

@@ -38,3 +38,40 @@
 //============ !!! ВАЖЛИВО !!! =====================
 //==================================================
 - додавати зображення тільки коли gulp НЕ запущено! інакше gulp.task 'images:dev' починає працювати по колу
+
+
+
+HTML
+    <h1 class="main__title">{{title}}</h1>
+JS
+    const TITLE = document.querySelector(".main__title");
+    TITLE.innerHTML = TITLE.innerHTML.replace("{{title}}", "Анкета");
+
+==========================================
+HTML
+    <main class="main">
+            <template id="index">
+                <h1 class="main__title">{{title}}</h1>
+                <ul class="user">
+                    <li class="user__item">Ім'я: <span class="user__name">{{userName}}</span></li>
+                    <li class="user__item">Вік: <span class="user__age">{{userAge}}</span></li>
+                </ul>
+            </template>
+            <!-- @@include('./modules/index/index-slider.html') -->
+
+        </main>
+
+JS
+    const Mustache = require('mustache');
+
+    const MAIN = document.querySelector(".main");
+    const INDEX_PAGE = document.getElementById("index").innerHTML;
+
+    let indexTemplate = {
+        title: "Анкета",
+        userName: "Джон",
+        userAge: "21",
+    };
+
+    let renderedHtml = Mustache.render(INDEX_PAGE, indexTemplate);
+    MAIN.innerHTML += renderedHtml;

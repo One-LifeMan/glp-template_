@@ -1,4 +1,7 @@
 .header {
+    position: sticky;
+    background-color: var(--main-bg);
+    top: 0;
     &__inner {
         padding: 20px 0;
         display: flex;
