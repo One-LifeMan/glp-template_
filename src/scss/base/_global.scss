@@ -14,9 +14,9 @@ body {
 
 a {
     color: inherit;
-    transition: 0.3s;
+    // transition: 0.3s;
     &:hover {
-        color:var(--a-hover);
+        color:var(--link-color-hover);
     }
 }
 

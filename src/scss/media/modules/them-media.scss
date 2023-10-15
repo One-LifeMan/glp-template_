@@ -7,8 +7,11 @@
         --selector-color:   #{$selector-color};
         --selector-bg:      #{$selector-bg}80;
 
-        --a-hover:          #{$main-text-color};
-        --a-bg-hover:       #{$main-bg}80;
+        // --link-color: #{$link-color};
+        // --link-bg: #{$link-bg};
+    
+        --link-color-hover: #{$link-color-hover};
+        --link-bg-hover: #{$link-bg-hover};
     }
 }
 @media (prefers-color-scheme: light) { 
@@ -20,7 +23,10 @@
         --selector-color:   #{$selector-color};
         --selector-bg:      #{$selector-bg}80;
 
-        --a-hover:          #{$main-bg};
-        --a-bg-hover:       #{$main-text-color}80;
+        // --link-color: #{$link-color};
+        // --link-bg: #{$link-bg};
+    
+        --link-color-hover: #{$link-color-hover};
+        --link-bg-hover: #{$link-bg-hover};
     }
 }

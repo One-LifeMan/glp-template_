@@ -3,7 +3,8 @@
 
 
 import "./modules/loader-script.js";
-import "./modules/mobile-script.js";
+import "./modules/menu-script.js";
+import "./modules/_scroll-up-script.js";
 
 // import "./classes/FILENAME.js";
 

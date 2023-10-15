@@ -2,6 +2,7 @@
     position: sticky;
     background-color: var(--main-bg);
     top: 0;
+    z-index: 999;
     &__inner {
         padding: 20px 0;
         display: flex;

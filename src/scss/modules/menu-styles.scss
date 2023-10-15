@@ -6,16 +6,12 @@
         margin: 0 10px;
     }
     &__item {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
     }
     &__link {
         padding: 10px;
         display: inline-block;
         &:hover {
-            background-color: var(--a-bg-hover);
+            
         }
     }
 }
