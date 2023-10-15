@@ -3,48 +3,88 @@ $container: 1220px;
 $logo-max-width: 60px;
 $logo-max-height: 60px;
 
-$main-bg: #ffffff;
+$bg-color-1: #ffffff;
 
-$main-text-color: #252525;
+$text-color-1: #252525;
 
 $selector-color: #ffffff;
-$selector-bg: #ff000080;   //50%
+$selector-bg: #ff0000;   //50%
 
-// $link-color: darkred;
-// $link-bg: lightcoral;
+// $link-color-1: darkred;
+// $link-bg-1: lightcoral;
 
-$link-color-hover: green;
-$link-bg-hover: darkblue;
+$link-color-1-hover: green;
+$link-bg-1-hover: darkblue;
 
 :root {
-    --main-bg:          #{$main-bg};
+    --main-bg:              #{$bg-color-1};
+    --dark-main-bg:          #{$bg-color-1};
 
-    --main-text-color:  #{$main-text-color};
+    --main-text-color:      #{$text-color-1};
+    --dark-main-text-color:  #{$text-color-1};
+
+    --selector-color:       #{$selector-color};
+    --dark-selector-color:   #{$selector-color};
+    --selector-bg:          #{$selector-bg}80;
+    --dark-selector-bg:      #{$selector-bg}80;
+
+    // --link-color: #{$link-color-1};
+    // --link-bg: #{$link-bg-1};
+
+    --link-color-hover: #{$link-color-1-hover};
+    --link-bg-hover: #{$link-bg-1-hover};
+}
+
+@media (prefers-color-scheme: light) { 
+    :root {
+        --main-bg:          #{$bg-color-1};
+
+        --main-text-color:  #{$text-color-1};
+
+        --selector-color:   #{$selector-color};
+        --selector-bg:      #{$selector-bg}80;
+    }
+}
+
+@media (prefers-color-scheme: dark) { 
+    :root {
+        --main-bg:          #{$text-color-1};
+
+        --main-text-color:  #{$bg-color-1};
+
+        --selector-color:   #{$selector-color};
+        --selector-bg:      #{$selector-bg}80;
+    }
+}
+
+.light-theme {
+    --main-bg:          #{$bg-color-1};
+
+    --main-text-color:  #{$text-color-1};
 
     --selector-color:   #{$selector-color};
     --selector-bg:      #{$selector-bg}80;
 
-    // --link-color: #{$link-color};
-    // --link-bg: #{$link-bg};
+    // --link-color: #{$link-color-1};
+    // --link-bg: #{$link-bg-1};
 
-    --link-color-hover: #{$link-color-hover};
-    --link-bg-hover: #{$link-bg-hover};
+    --link-color-hover: #{$link-color-1-hover};
+    --link-bg-hover: #{$link-bg-1-hover};
 }
 .dark-theme {
-    --main-bg:          #{$main-text-color};
+    --main-bg:          #{$text-color-1};
 
-    --main-text-color:  #{$main-bg};
+    --main-text-color:  #{$bg-color-1};
 
     --selector-color:   #{$selector-color};
     --selector-bg:      #{$selector-bg}80;
 
-    // --link-color: #{$link-color};
-    // --link-bg: #{$link-bg};
+    // --link-color: #{$link-color-1};
+    // --link-bg: #{$link-bg-1};
 
-    --link-color-hover: #{$link-color-hover};
-    --link-bg-hover: #{$link-bg-hover};
+    --link-color-hover: #{$link-color-1-hover};
+    --link-bg-hover: #{$link-bg-1-hover};
 }
-
 
 $main-font-family: "Arial";
 

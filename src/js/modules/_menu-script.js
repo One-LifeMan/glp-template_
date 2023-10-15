@@ -1,5 +1,5 @@
 
-import { BURGER, MENU } from "./../constants/constants";
+import { BURGER, MENU } from "../constants/constants";
 
 let $ = function (selector) {
     return document.querySelector(selector);

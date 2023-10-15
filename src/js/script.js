@@ -2,8 +2,8 @@
 
 
 
-import "./modules/loader-script.js";
-import "./modules/menu-script.js";
+import "./modules/_loader-script.js";
+import "./modules/_menu-script.js";
 import "./modules/_scroll-up-script.js";
 
 // import "./classes/FILENAME.js";
