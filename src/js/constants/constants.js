@@ -1,15 +1,6 @@
-const Mustache          = require('mustache');
-
-const BURGER            = document.querySelector(".menu__burger");
-const MENU              = document.querySelector(".menu");
-const SCROLL_UP         = document.querySelector(".scroll-up");
-
-//==================================================
-//============ експортувати тільки ті що потрібні ==
-//==================================================
-export {
-    BURGER,
-    MENU,
-    SCROLL_UP,
-    Mustache,
-};
+const Mustache = require('mustache');
+const LOADER = document.querySelector(".loader");
+const MENU = document.querySelector(".menu");
+const BURGER = document.querySelector(".menu__burger");
+const SCROLL_UP = document.querySelector(".scroll-up");
+export { LOADER, MENU, BURGER, SCROLL_UP, Mustache, };

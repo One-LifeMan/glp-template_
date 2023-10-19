@@ -30,10 +30,14 @@ const webp                  = require('gulp-webp');
 const svgSprite             = require('gulp-svg-sprite');
 
 //FONTS
-const ttf2woff = require('gulp-ttf2woff');
-const ttf2woff2 = require('gulp-ttf2woff2');
+const ttf2woff              = require('gulp-ttf2woff');
+const ttf2woff2             = require('gulp-ttf2woff2');
 
 const changed               = require('gulp-changed');
+
+//TS
+const ts            = require('gulp-typescript');
+const tsProject     = ts.createProject('tsconfig.json');
 
 const fileIncludeSettings = {
     prefix: '@@',
@@ -127,6 +131,12 @@ gulp.task('files:docs', function () {
         .pipe(gulp.src('./src/lang/**/*'))
         .pipe(changed('./build/lang/'))
         .pipe(gulp.dest('./build/lang/'));
+});
+
+gulp.task('ts:docs', () => {
+    return tsProject.src()
+        .pipe(tsProject())
+        .js.pipe(gulp.dest('src/js/')); 
 });
 
 gulp.task('js:docs', function () {

@@ -17,6 +17,8 @@ const changed       = require('gulp-changed');
 const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
 
+const ts            = require('gulp-typescript');
+const tsProject     = ts.createProject('tsconfig.json');
 
 const fileIncludeSettings = {
     prefix: '@@',
@@ -98,6 +100,12 @@ gulp.task('files:dev', function () {
         .pipe(gulp.dest('./build/lang/'));
 });
 
+gulp.task('ts:dev', () => {
+    return tsProject.src()
+        .pipe(tsProject())
+        .js.pipe(gulp.dest('src/js/')); 
+});
+
 gulp.task('js:dev', function () {
     return gulp
         .src('./src/js/*.js')
@@ -109,7 +117,7 @@ gulp.task('js:dev', function () {
 })
 
 const serverOptions = {
-    host: "192.168.0.3",
+    host: "192.168.0.4",
     livereload: true,
     open: true
 };
@@ -135,6 +143,7 @@ gulp.task('watch:dev', function () {
     gulp.watch('./src/img/**/*', gulp.parallel('images:dev'));
     gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'));
     gulp.watch('./src/files/**/*', gulp.parallel('files:dev'));
+    gulp.watch('./src/ts/**/*', gulp.parallel('ts:dev'));
     gulp.watch('./src/js/**/*', gulp.parallel('js:dev'));
 });
 
