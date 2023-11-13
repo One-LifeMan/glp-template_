@@ -3,7 +3,7 @@ const path = require("path");
 const config = {
     mode: "none",
     entry: {
-        script:         path.resolve(__dirname, "./src/js/script.js"),
+        main: path.resolve(__dirname, "./src/js/main.js"),
         "index-script": path.resolve(__dirname, "./src/js/index-script.js"),
     },
     output: {

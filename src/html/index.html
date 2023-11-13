@@ -1,27 +1,48 @@
-@@include('./modules/_doc.html', {
-    "description": "Lorem ipsum dolor sit amet.",
-    "title": "Document",
-    "selfStyle": "./css/index-styles.css"
-})
-<body>
-    @@include('./modules/_loader.html')
-    <div class="wrapper">
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!-- prettier-ignore -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta
+            name="description"
+            content="Lorem ipsum dolor sit"
+        />
+        <!-- prettier-ignore -->
+        <link rel="icon" type="image/x-icon" href="./img/favicon/favicon.ico"/>
+        <!-- prettier-ignore -->
+        <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg"/>
+        <!-- prettier-ignore -->
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png"/>
+        <!-- prettier-ignore -->
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png"/>
+        <!-- prettier-ignore -->
+        <link rel="icon" type="image/png" sizes="48x48" href="./img/favicon/favicon-48x48.png"/>
+        <!-- prettier-ignore -->
+        <link rel="icon" type="image/png" sizes="64x64" href="./img/favicon/favicon-64x64.png"/>
+        <!-- prettier-ignore -->
+        <link rel="icon" type="image/png" sizes="128x128" href="./img/favicon/favicon-128x128.png"/>
 
-        @@include('./modules/_header.html')
+        <title>Document</title>
+        <!-- prettier-ignore -->
+        <link rel="stylesheet" href="./css/index-styles.css"
+    />
+    </head>
+    <body>
+        @@include('./modules/_loader.html')
+        <div class="wrapper">
+            @@include('./modules/_header.html')
 
-        <main class="main">
-            
-            <!-- @@include('./modules/index/index-slider.html') -->
-            
-        </main>
+            <main class="main">
+                <!-- @@include('./modules/index/index-slider.html') -->
+            </main>
 
-        @@include('./modules/_footer.html')
+            @@include('./modules/_footer.html')
+        </div>
 
-    </div>
+        @@include('./modules/_scroll-up.html')
 
-    @@include('./modules/_scroll-up.html')
-    
-    <script src="./js/index-script.js"></script>
-    <script src="./js/hello.js"></script>
-</body>
+        <script src="./js/main.js"></script>
+        <script src="./js/index-script.js"></script>
+    </body>
 </html>

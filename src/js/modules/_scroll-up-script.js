@@ -1,7 +1,7 @@
 import { SCROLL_UP } from "../constants/constants";
 SCROLL_UP.addEventListener("click", () => {
     window.scrollTo({
-        top: 0
+        top: 0,
     });
 });
 window.addEventListener("scroll", () => {

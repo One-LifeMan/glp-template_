@@ -1,0 +1,14 @@
+{
+    "my img": {
+        "scope": "html",
+        "prefix": "img",
+        "body": "<img src='$1' title='$2' alt='$3'/>",
+        "description": "My HTML Snippet"
+    },
+    "my a": {
+        "scope": "html",
+        "prefix": "a",
+        "body": "<a href='$1' title='$2'></a>",
+        "description": "My HTML Snippet"
+    }
+}

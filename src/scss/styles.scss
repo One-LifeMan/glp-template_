@@ -1,11 +1,10 @@
-@import "./base/reset.scss";
-@import "./base/dont_stick.scss";
-@import "./base/vars.scss";
-@import "./base/fonts.scss";
-@import "./base/global.scss";
-@import "./base/utils.scss";
-
-@import "./animations/loader-animations.scss";
+@import "./base/reset";
+@import "./base/dont_stick";
+@import "./base/vars";
+@import "./base/fonts";
+@import "./base/global";
+@import "./base/utils";
+@import "./animations/loader-animations";
 
 body:has(.menu__burger.active) {
     overflow: hidden;

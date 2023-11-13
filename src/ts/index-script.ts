@@ -1,10 +1,5 @@
-"use strict"
+"use strict";
 
-import "./script.js";
+// import "./script.js";
 
-import {
-    Mustache
-} from "./constants/constants.js";
-
-
-console.log("index script");
+import {} from "./constants/constants.js";
