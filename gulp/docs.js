@@ -81,26 +81,42 @@ gulp.task("sass:docs", function () {
     );
 });
 
-gulp.task("images:docs", function () {
+gulp.task("favicon:docs", function () {
     return gulp
-        .src("./src/img/icon/sprite/*.svg")
+        .src(["./src/img/favicon/**/*"])
+        .pipe(changed("./docs/"))
+        .pipe(gulp.dest("./docs/"));
+});
+
+gulp.task("spriteSheet:docs", function () {
+    return gulp
+        .src(["./src/img/icons/*.svg"])
         .pipe(
             svgSprite({
                 mode: {
                     stack: {
-                        sprite: "../sprite.svg",
+                        sprite: "../spriteSheet.svg",
                     },
                 },
             }),
         )
-        .pipe(gulp.dest("./src/img/icon/"))
+        .pipe(gulp.dest("./src/img/"));
+});
 
-        .pipe(gulp.src(["./src/img/**/*", "!./src/img/icon/sprite/*"]))
+gulp.task("images:docs", function () {
+    return gulp
+        .src(["./src/img/**/*", "!./src/img/icons/**", "!./src/img/favicon/**"])
         .pipe(changed("./docs/img/"))
         .pipe(webp())
         .pipe(gulp.dest("./docs/img/"))
 
-        .pipe(gulp.src(["./src/img/**/*", "!./src/img/icon/sprite/*"]))
+        .pipe(
+            gulp.src([
+                "./src/img/**/*",
+                "!./src/img/icons/**",
+                "!./src/img/favicon/**",
+            ]),
+        )
         .pipe(changed("./docs/img/"))
         .pipe(imagemin({ verbose: true }))
         .pipe(gulp.dest("./docs/img/"));

@@ -10,7 +10,8 @@ gulp.task(
         gulp.parallel(
             "html:dev",
             "sass:dev",
-            "images:dev",
+            "favicon:dev",
+            gulp.series("spriteSheet:dev", "images:dev"),
             "fonts:dev",
             "files:dev",
             gulp.series("ts:dev", "js:dev"),
@@ -26,7 +27,8 @@ gulp.task(
         gulp.parallel(
             "html:docs",
             "sass:docs",
-            "images:docs",
+            "favicon:docs",
+            gulp.series("spriteSheet:docs", "images:docs"),
             "fonts:docs",
             "files:docs",
             gulp.series("ts:docs", "js:docs"),
