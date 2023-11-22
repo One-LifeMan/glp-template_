@@ -4,7 +4,7 @@ dist
 coverage
 
 # Ignore files:
-# **/*.html
+**/*.html
 # **/*.scss
 # **/*.ts
 **/*.css

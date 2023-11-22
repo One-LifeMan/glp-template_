@@ -7,6 +7,9 @@
             { "ignore": ["selectors-within-list"] }
         ],
         "selector-class-pattern": null,
+        "block-no-empty": null,
+        "number-max-precision": 10,
+        "declaration-block-no-redundant-longhand-properties": null,
         "scss/dollar-variable-pattern": null,
         "declaration-property-unit-allowed-list": {
             "margin": ["px", "%"],
