@@ -1,13 +1,10 @@
 .logo {
     display: inline-flex;
     align-self: start;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     max-width: $logo-max-width;
     max-height: $logo-max-height;
-    background-color: pink;
+    background-color: orangered;
+
     &__img {
     }
 }
