@@ -1,93 +1,19 @@
-$container: 1220px;
+$container: 1220;
 $logo-max-width: 60px;
 $logo-max-height: 60px;
 
-$bg-color-1: #ffffff;
+// colors
+$body-bg: #fff;
+$body-color: #000;
+$selector-color: #fff;
+$selector-bg: #f00;
 
-$text-color-1: #252525;
-
-$selector-color: #ffffff;
-$selector-bg: #ff0000; //50%
-
-// $link-color-1: darkred;
-// $link-bg-1: lightcoral;
-
-$link-color-1-hover: green;
-$link-bg-1-hover: darkblue;
-
-:root {
-    --main-bg: #{$bg-color-1};
-    --dark-main-bg: #{$bg-color-1};
-
-    --main-text-color: #{$text-color-1};
-    --dark-main-text-color: #{$text-color-1};
-
-    --selector-color: #{$selector-color};
-    --dark-selector-color: #{$selector-color};
-    --selector-bg: #{$selector-bg}80;
-    --dark-selector-bg: #{$selector-bg}80;
-
-    // --link-color: #{$link-color-1};
-    // --link-bg: #{$link-bg-1};
-
-    --link-color-hover: #{$link-color-1-hover};
-    --link-bg-hover: #{$link-bg-1-hover};
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --main-bg: #{$bg-color-1};
-
-        --main-text-color: #{$text-color-1};
-
-        --selector-color: #{$selector-color};
-        --selector-bg: #{$selector-bg}80;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --main-bg: #{$text-color-1};
-
-        --main-text-color: #{$bg-color-1};
-
-        --selector-color: #{$selector-color};
-        --selector-bg: #{$selector-bg}80;
-    }
-}
-
-.light-theme {
-    --main-bg: #{$bg-color-1};
-
-    --main-text-color: #{$text-color-1};
-
-    --selector-color: #{$selector-color};
-    --selector-bg: #{$selector-bg}80;
-
-    // --link-color: #{$link-color-1};
-    // --link-bg: #{$link-bg-1};
-
-    --link-color-hover: #{$link-color-1-hover};
-    --link-bg-hover: #{$link-bg-1-hover};
-}
-.dark-theme {
-    --main-bg: #{$text-color-1};
-
-    --main-text-color: #{$bg-color-1};
-
-    --selector-color: #{$selector-color};
-    --selector-bg: #{$selector-bg}80;
-
-    // --link-color: #{$link-color-1};
-    // --link-bg: #{$link-bg-1};
-
-    --link-color-hover: #{$link-color-1-hover};
-    --link-bg-hover: #{$link-bg-1-hover};
-}
-
-$main-font-family: "Arial";
-
+// font
+$main-font-family: arial, helvetica, sans-serif;
 $main-font-size: 14px;
 $main-font-style: normal;
 $main-font-weight: 400;
 $main-line-height: 1;
+
+// other
+$scroll-up-hover: lightblue;

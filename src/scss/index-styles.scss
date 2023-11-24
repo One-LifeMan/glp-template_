@@ -1,19 +1,2 @@
-
-@import "styles.scss";
-@import "./modules/*.scss";
-@import "./modules/index/*.scss";
-
-
-
-
-// стилі писати ТУТ
-
-
-
-
-
-
-
-@import "./media/modules/*scss";
-@import "./media/modules/index/*.scss";
-@import "./media/index-media.scss";
+@import "./base/vars";
+@import "./modules/index/*";

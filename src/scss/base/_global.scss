@@ -8,32 +8,30 @@ body {
     font-style: $main-font-style;
     font-weight: $main-font-weight;
     line-height: $main-line-height;
-    color: var(--main-text-color);
-    background-color: var(--main-bg);
+    color: var(--body-color);
+    background-color: var(--body-bg);
 }
 
 a {
     color: inherit;
+
     // transition: 0.3s;
     &:hover {
-        color:var(--link-color-hover);
+        // color:var(--link-color-hover);
     }
 }
 
 img {
-    -webkit-user-select: none; /* Safari, Chrome та нові версії Opera */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer та Edge */
-    user-select: none; /* Стандарт */
+    user-select: none;
 }
 
 .container {
-    max-width: $container;
+    max-width: $container * 1px;
     padding: 0 10px;
     margin: 0 auto;
 }
 
 *::selection {
-    color: var(--selector-color);
-    background-color: var(--selector-bg);
+    // color: var(--selector-color);
+    // background-color: var(--selector-bg);
 }

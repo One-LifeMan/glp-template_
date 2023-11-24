@@ -1,4 +1,4 @@
-import { BURGER, MENU } from "../constants/constants";
+import { BURGER, MENU, MENU_ITEMS } from "../constants/constants";
 
 let $ = function (selector: string): HTMLElement {
     return document.querySelector(selector)!;
@@ -20,8 +20,19 @@ function mobileMenuSizeAndPosition() {
     }
 }
 
+function closeMenu() {
+    MENU_ITEMS.forEach((item) => {
+        item.addEventListener("click", () => {
+            BURGER.classList.remove("active");
+            MENU.scrollTop = 0;
+        });
+    });
+}
+
 function startMenu() {
     mobileMenuSizeAndPosition();
+
+    closeMenu();
 
     BURGER.addEventListener("click", () => {
         BURGER.classList.toggle("active");
