@@ -1,0 +1,22 @@
+:root {
+    --body-bg: #{$body-bg};
+    --body-color: #{$body-color};
+
+    @media (prefers-color-scheme: light) {}
+
+    @media (prefers-color-scheme: dark) {
+        --body-bg: #121212;
+        --body-color: #E2E2E2;
+    }
+
+}
+
+.light-theme {
+    --body-bg: #{$body-bg};
+    --body-color: #{$body-color};
+}
+
+.dark-theme {
+    --body-bg: #121212;
+    --body-color: #E2E2E2;
+}

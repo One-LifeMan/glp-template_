@@ -1,0 +1,26 @@
+.theme-toggle {
+    display: inline-block;
+    padding: 20px;
+    margin-left: auto;
+    background-image: url("./../img/spriteSheet.svg#light-mode");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @media (prefers-color-scheme: light) {
+        background-image: url("./../img/spriteSheet.svg#light-mode");
+        
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        background-image: url("./../img/spriteSheet.svg#dark-mode");
+    }
+}
+
+body.light-theme .theme-toggle {
+    background-image: url("./../img/spriteSheet.svg#light-mode");
+}
+
+body.dark-theme .theme-toggle {
+    background-image: url("./../img/spriteSheet.svg#dark-mode");
+}

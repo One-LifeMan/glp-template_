@@ -8,7 +8,7 @@ SCROLL_UP.addEventListener("click", () => {
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > window.outerHeight) {
-        SCROLL_UP.style.display = "flex";
+        SCROLL_UP.style.display = "block";
     } else {
         SCROLL_UP.style.display = "none";
     }
