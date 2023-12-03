@@ -81,7 +81,8 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        margin: 0 10px;
+
+        // margin: 0 10px;
 
         @media screen and (width <= 767px) {
             flex-direction: column;
@@ -102,7 +103,8 @@
 
     &__link {
         display: inline-block;
-        padding: 10px;
+
+        // padding: 10px;
 
         @media screen and (width <= 767px) {
             flex-grow: 1;
